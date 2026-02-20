@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:KlettControllerwsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" name="KlettController" targetNamespace="urn:KlettControllerwsdl">
+    <wsdl:message name="TestServiceIn">
+        <wsdl:part name="message" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="TestServiceOut">
+        <wsdl:part name="return" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="GetOrderResultIn">
+        <wsdl:part name="loadlistNo" type="xsd:string"/>
+        <wsdl:part name="orderYear" type="xsd:string"/>
+        <wsdl:part name="partnerID" type="xsd:string"/>
+        <wsdl:part name="warehouseID" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="GetOrderResultOut">
+        <wsdl:part name="return" type="xsd:struct"/>
+    </wsdl:message>
+    <wsdl:message name="SendOrderIn">
+        <wsdl:part name="docMessage" type="xsd:string"/>
+        <wsdl:part name="partnerID" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="SendOrderOut">
+        <wsdl:part name="return" type="xsd:struct"/>
+    </wsdl:message>
+    <wsdl:portType name="KlettControllerPortType">
+        <wsdl:operation name="TestService">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:TestServiceIn"/>
+            <wsdl:output message="tns:TestServiceOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SendOrder">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:SendOrderIn"/>
+            <wsdl:output message="tns:SendOrderOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetOrderResult">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:GetOrderResultIn"/>
+            <wsdl:output message="tns:GetOrderResultOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="KlettControllerBinding" type="tns:KlettControllerPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="TestService">
+            <soap:operation soapAction="urn:KlettControllerwsdl#TestService" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:KlettControllerwsdl"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:KlettControllerwsdl"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetOrderResult">
+            <soap:operation soapAction="urn:KlettControllerwsdl#GetOrderResult" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:KlettControllerwsdl"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:KlettControllerwsdl"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendOrder">
+            <soap:operation soapAction="urn:KlettControllerwsdl#SendOrder" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:KlettControllerwsdl"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:KlettControllerwsdl"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="KlettControllerService">
+        <wsdl:port name="KlettControllerPort" binding="tns:KlettControllerBinding">
+            <soap:address location="https://wtc3.schenker.co.rs/ws/klett/wtc-ws/ws/1"/>
+        </wsdl:port>
+    </wsdl:service>
+</definitions>

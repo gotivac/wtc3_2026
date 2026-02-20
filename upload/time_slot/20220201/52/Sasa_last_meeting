@@ -1,0 +1,36 @@
+Zdravo Vlado,
+
+kao sto znas, Sasa je bio u petak kod mene i prosli smo neke stvari, pa da te obavestim o zakljuccima.
+
+Prvo sto se tice veb servisa za Klett.
+
+Sa Gordanom cemo imati jos neka usaglasavanja, ali ono sto je bitno je da oni vide servis i uspesno komuniciraju sa njim, dalje je na nama da to utegnemo sa podacima.
+Redosled poteza prilikom prijema njihovog zahteva je sledeci:
+
+1. kompletan zahtev, sirov se snima u bazu
+2. na osnovu njihovog zahteva se kreira nalog kod nas u bazi
+3. na osnovu datuma naloga se kreira time slot u prvom slobodnom terminu toga dana
+3a. ukoliko nema slobodnih termina toga dana, kreira se time slot za prvi sledeci dan kada moze (nije nedelja, praznik...).
+4. ukoliko nalog iz nekog razloga nije kreiran, vraca se informacija o gresci
+5. ukoliko je nalog uspesno kreiran, pored postojecih podataka, mi cemo im vratiti i podatak o datumu i vremenu time slota. Ako im ne treba, ne moraju da ga koriste, Sasa i ja smo zakljucili da im taj podatak treba da bi znali kada kamion treba da stigne. 
+
+Za RF modul, procedura treba da bude sledeca:
+
+INBOUND
+
+Kada kamion stigne, administrator to notira u aplikaciji (kreira aktivnost na osnovu naloga potrvrdjujuci da je kamion stigao i upisujuci vreme pristizanja).
+Kada je aktivnost kreirana, pojavljuje se opcija da se odstampa onoliko jedinstvenih bar kodova koliko ima paleta. 
+Bar kodovi se stampaju tako sto se kreira pdf dokument A5 formata na kome se nalazi bar kod i podatak o kolicini pakovanja na paleti.
+Ukoliko na jednoj paleti ima vise od jednog proizvoda (vise razlicitih proizvoda), za tu paletu se stampa onoliko nalepnica koliko ima razlicitih proizvoda.
+Kada su nalepnice odstampane, viljuskarista ih lepi na palete i pokrece program na RF uredjaju. 
+Na ekranu ima dva dugmeta, za INBOUND i OUTBOUND (dodacemo kasnije po potrebi ako treba jos nesto).
+Bira INBOUND i dobija spisak aktivnosti koje cekaju prijem. Izabere odgovarajucu i redom skenira bar kodove na paletama.
+Kada je uspesno skenirano (ako se nesto ne slaze, ide kod administratora koji to dalje resava sa posiljaocem), tovari palete i vozi ih do SLOC-ova. 
+Postavlja palete na SLOC-ove ujedno skenirajuci bar kod na SLOC-u i barkod palete i na taj nacin paleti, a samim tim i proizvodima na njoj dodeljuje SLOC, odnosno adresu cime je prijem zavrsen.
+
+Kako ti ovo deluje?
+Za OUTBOUND nismo razradjivali proceduru, prvo da uradimo prijem.
+
+Ja cu dok Sasa ne definise sta se i gde snima (trebalo bi za par dana) da radim na intefejsu za RF i da probam da utegnem web service sa Gordanom.
+
+

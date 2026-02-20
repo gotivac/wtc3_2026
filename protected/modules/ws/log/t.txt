@@ -1,0 +1,544 @@
+array (
+  0 => 
+  array (
+    'OrderHeader' => 
+    array (
+      '@attributes' => 
+      array (
+        'OrderNo' => '21-010-002996',
+        'OrderYear' => '2022',
+        'LoadListNo' => '2022-01-19-0001',
+      ),
+      'OrderDate' => '2022-01-19',
+      'OrderTypeID' => '02',
+      'IsSum' => '0',
+      'StockFrom' => '01',
+      'StockTo' => '00',
+      'OrderStatusID' => '00',
+      'ULInstr' => 
+      array (
+      ),
+      'Remark' => 
+      array (
+      ),
+      'OrderWeight' => '16.23',
+      'IsWeb' => '0',
+      'DocPrint' => '0',
+      'PrintCopyNo' => '2',
+      'DeliveryType' => '9',
+      'IsUrgent' => '0',
+      'RefDocType' => '0100',
+      'DeliveryDate' => '2021-11-22',
+      'CVParty' => 
+      array (
+        'CVPartyID' => 'Lilas knjižara',
+        'CVPartyTaxNo' => '102104604',
+        'CVPartyName' => 'Lilas knjižara',
+        'CVPartyPostalCode' => '25000',
+        'CVPartyCity' => 'Sombor',
+        'CVPartyAddress' => 'Venac Radomira Putnika 26',
+        'CVPartyCountry' => 'RS',
+        'CVPartyContact' => 
+        array (
+        ),
+        'CVPartyPhoneNo' => '025/421433',
+        'CVPartyCompanyNo' => '54164262',
+        'CVPartyType' => '1',
+      ),
+      'ShipToParty' => 
+      array (
+        'ShipToPartyID' => 'Lilas knjižara',
+        'ShipToPartyTaxNo' => '102104604',
+        'ShipToPartyName' => 'Lilas knjižara',
+        'ShipToPartyPostalCode' => '25000',
+        'ShipToPartyCity' => 'Sombor',
+        'ShipToPartyAddress' => 'Venac Radomira Putnika 26',
+        'ShipToPartyCountry' => 'RS',
+        'ShipToPartyContact' => 
+        array (
+        ),
+        'ShipToPartyPhoneNo' => '025/421433',
+        'ShipToPartyCompanyNo' => '54164262',
+        'ShipToPartyType' => '1',
+      ),
+      'Shipper' => 
+      array (
+        'ShipperID' => 'YU PD Express d.o.o.',
+        'ShipperTaxNo' => '101754136',
+        'ShipperName' => 'YU PD Express d.o.o.',
+        'ShipperPostalCode' => '11060',
+        'ShipperCity' => 'Beograd (Palilula)',
+        'ShipperAddress' => 'Zage Malivuk 1',
+        'ShipperCountry' => 'RS',
+        'ShipperPhoneNo' => 
+        array (
+        ),
+        'ShipperCompanyNo' => '08192189',
+      ),
+    ),
+    'OrderItem' => 
+    array (
+      0 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '1',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810102-3',
+          'ProductName' => 'Srpski jezik 8 čitanka Cvetnik NOVO',
+          'Barcode' => '9788653306168',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.00',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '0.00',
+      ),
+      1 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '2',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810103-2',
+          'ProductName' => 'Srpski jezik 8 gramatika NOVO',
+          'Barcode' => '9788653306175',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.34',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.02',
+      ),
+      2 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '3',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810105-2',
+          'ProductName' => 'Srpski jezik 8 radna sveska NOVO',
+          'Barcode' => '9788653306182',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.37',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.11',
+      ),
+      3 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '4',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810501-2',
+          'ProductName' => 'Tehnika i tehnologija 8 udžbenik NOVO',
+          'Barcode' => '9788653306687',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.43',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.29',
+      ),
+      4 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '5',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810601-3',
+          'ProductName' => 'Geografija 8 udžbenik NOVO',
+          'Barcode' => '9788653306755',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.47',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.41',
+      ),
+      5 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '6',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810701-2',
+          'ProductName' => 'Istorija 8 udžbenik NOVO',
+          'Barcode' => '9788653306670',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.54',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.62',
+      ),
+      6 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '7',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1410102-2',
+          'ProductName' => 'Srpski jezik 4_čitanka Beskrajne reči_II',
+          'Barcode' => '9788661096105',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.71',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '2.13',
+      ),
+      7 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '8',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1410103-2',
+          'ProductName' => 'Srpski jezik 4_gramatika Dar reči_II',
+          'Barcode' => '9788661096112',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.00',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '0.00',
+      ),
+      8 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '9',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1410105-2',
+          'ProductName' => 'Srpski jezik 4_radna sveska_II',
+          'Barcode' => '9788661096129',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.00',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '0.00',
+      ),
+      9 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '10',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1410201-2',
+          'ProductName' => 'Matematika 4_udžbenik iz 4 dela_II',
+          'Barcode' => '9788661096174',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.00',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '0.00',
+      ),
+      10 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '11',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1413201-2',
+          'ProductName' => 'Priroda i društvo 4_udžbenik_II',
+          'Barcode' => '9788661096198',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.00',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '0.00',
+      ),
+      11 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '12',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1413205-2',
+          'ProductName' => 'Priroda i društvo 4_radna sveska_II',
+          'Barcode' => '9788661096204',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.00',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '0.00',
+      ),
+      12 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '13',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1810201-1',
+          'ProductName' => 'Matematika 8_udžbenik',
+          'Barcode' => '9788661096297',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.55',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.65',
+      ),
+      13 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '14',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1810206-1',
+          'ProductName' => 'Matematika 8_zbirka zadataka',
+          'Barcode' => '9788661096303',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.47',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.41',
+      ),
+      14 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '15',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1810901-2',
+          'ProductName' => 'Fizika 8_udžbenik_II',
+          'Barcode' => '9788661096402',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.57',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.71',
+      ),
+      15 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '16',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1811001-2',
+          'ProductName' => 'Hemija 8_udžbenik_II',
+          'Barcode' => '9788661096334',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.61',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.83',
+      ),
+      16 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '17',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'L1811005-2',
+          'ProductName' => 'Hemija 8_laboratorijske vežbe sa zadacima_II',
+          'Barcode' => '9788661096341',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.35',
+        ),
+        'Quantity' => '3.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.05',
+      ),
+    ),
+  ),
+  1 => 
+  array (
+    'OrderHeader' => 
+    array (
+      '@attributes' => 
+      array (
+        'OrderNo' => '21-010-002997',
+        'OrderYear' => '2022',
+        'LoadListNo' => '2022-01-19-0001',
+      ),
+      'OrderDate' => '2022-01-19',
+      'OrderTypeID' => '02',
+      'IsSum' => '0',
+      'StockFrom' => '01',
+      'StockTo' => '00',
+      'OrderStatusID' => '00',
+      'ULInstr' => 
+      array (
+      ),
+      'Remark' => 
+      array (
+      ),
+      'OrderWeight' => '1.04',
+      'IsWeb' => '0',
+      'DocPrint' => '0',
+      'PrintCopyNo' => '2',
+      'DeliveryType' => '14',
+      'IsUrgent' => '0',
+      'RefDocType' => '0100',
+      'DeliveryDate' => '2021-11-22',
+      'CVParty' => 
+      array (
+        'CVPartyID' => 'Lilas knjižara',
+        'CVPartyTaxNo' => '102104604',
+        'CVPartyName' => 'Lilas knjižara',
+        'CVPartyPostalCode' => '25000',
+        'CVPartyCity' => 'Sombor',
+        'CVPartyAddress' => 'Venac Radomira Putnika 26',
+        'CVPartyCountry' => 'RS',
+        'CVPartyContact' => 
+        array (
+        ),
+        'CVPartyPhoneNo' => '025/421433',
+        'CVPartyCompanyNo' => '54164262',
+        'CVPartyType' => '1',
+      ),
+      'ShipToParty' => 
+      array (
+        'ShipToPartyID' => 'Lilas knjižara',
+        'ShipToPartyTaxNo' => '102104604',
+        'ShipToPartyName' => 'Lilas knjižara',
+        'ShipToPartyPostalCode' => '25000',
+        'ShipToPartyCity' => 'Sombor',
+        'ShipToPartyAddress' => 'Venac Radomira Putnika 26',
+        'ShipToPartyCountry' => 'RS',
+        'ShipToPartyContact' => 
+        array (
+        ),
+        'ShipToPartyPhoneNo' => '025/421433',
+        'ShipToPartyCompanyNo' => '54164262',
+        'ShipToPartyType' => '1',
+      ),
+      'Shipper' => 
+      array (
+        'ShipperID' => 'YU PD Express d.o.o.',
+        'ShipperTaxNo' => '101754136',
+        'ShipperName' => 'YU PD Express d.o.o.',
+        'ShipperPostalCode' => '11060',
+        'ShipperCity' => 'Beograd (Palilula)',
+        'ShipperAddress' => 'Zage Malivuk 1',
+        'ShipperCountry' => 'RS',
+        'ShipperPhoneNo' => 
+        array (
+        ),
+        'ShipperCompanyNo' => '08192189',
+      ),
+    ),
+    'OrderItem' => 
+    array (
+      0 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '1',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810206-2',
+          'ProductName' => 'Matematika 8 zbirka zadataka NOVO',
+          'Barcode' => '9788653306236',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.52',
+        ),
+        'Quantity' => '2.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.04',
+      ),
+      1 => 
+      array (
+        '@attributes' => 
+        array (
+          'ItemNo' => '2',
+        ),
+        'Product' => 
+        array (
+          'ProductCode' => 'K1810206-2',
+          'ProductName' => 'Matematika 8 zbirka zadataka NOVO',
+          'Barcode' => '9788653306236',
+          'QttOnPalett' => '0',
+          'QttInPack' => '0',
+          'UnitWeight' => '0.52',
+        ),
+        'Quantity' => '2.00',
+        'RealQuantity' => '0.00',
+        'MsrUnit' => 'KD',
+        'ItemWeight' => '1.04',
+      ),
+    ),
+  ),
+)

@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="DocMessage">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Header" type="HeaderType"/>
+				<xsd:element name="Body">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="WarehouseOrder"  maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="OrderHeader">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="OrderDate" type="xsd:date"/>
+													<xsd:element name="OrderTypeID">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:length value="2"/>
+																<xsd:enumeration value="01"/>
+																<xsd:enumeration value="02"/>
+																<xsd:enumeration value="04"/>
+																<xsd:enumeration value="14"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+                          <xsd:element name="WMSOrderNo" minOccurs="0">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="32"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="RefInvNo" minOccurs="0">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="32"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="IsSum">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:int">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+													<xsd:element name="StockFrom">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:length value="2"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="StockTo">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:length value="2"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="OrderStatusID" type="xsd:string"/>
+													<xsd:element name="VehicleData" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:maxLength value="80"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="DriverData" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:maxLength value="80"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="ULInstr" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:maxLength value="200"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="Remark" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:maxLength value="200"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="PalettCount" minOccurs="0" type="xsd:int" />
+													<xsd:element name="PackCount" minOccurs="0" type="xsd:int" />
+													<xsd:element name="OrderWeight" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:decimal">
+																<xsd:totalDigits value="15"/>
+																<xsd:fractionDigits value="2"/>
+																<xsd:minInclusive value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+                          <xsd:element name="IsWeb">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:int">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="DocPrint">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:int">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="PrintCopyNo" minOccurs="0" type="xsd:int" />
+                          <xsd:element name="DeliveryType">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="1"/>
+                                <xsd:maxLength value="2"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="IsUrgent">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:int">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="RefDocType" minOccurs="0">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="1"/>
+                                <xsd:maxLength value="4"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="DeliveryDate" type="xsd:date" minOccurs="0"/>
+													<xsd:element name="CVParty">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="CVPartyID">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="1"/>
+																			<xsd:maxLength value="30"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+                                <xsd:element name="CVPartyTaxNo">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:length value="9"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+																<xsd:element name="CVPartyName" type="xsd:string"/>
+                                <xsd:element name="CVPartyPostalCode" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="24"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyCity" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="32"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyAddress" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyCountry" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="2"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyContact" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyPhoneNo" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="50"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyCompanyNo" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="24"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="CVPartyType">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:int">
+                                      <xsd:enumeration value="1"/>
+                                      <xsd:enumeration value="2"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+                          <xsd:element name="ShipToParty">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ShipToPartyID">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="1"/>
+                                      <xsd:maxLength value="30"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyTaxNo">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:length value="9"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyName" type="xsd:string"/>
+                                <xsd:element name="ShipToPartyPostalCode" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="24"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyCity" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="32"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyAddress" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyCountry" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="2"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyContact" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyPhoneNo" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="50"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyCompanyNo" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="24"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipToPartyType">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:int">
+                                      <xsd:enumeration value="1"/>
+                                      <xsd:enumeration value="2"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Shipper"  minOccurs="0">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ShipperID">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="30"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperTaxNo">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="9"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperName">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperPostalCode" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="24"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperCity" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="32"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperAddress" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperCountry" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="2"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperContact" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="100"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperPhoneNo" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:minLength value="0"/>
+                                      <xsd:maxLength value="50"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ShipperCompanyNo" minOccurs="0">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                      <xsd:maxLength value="24"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                               </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="OrderNo" use="required">
+													<xsd:simpleType>
+														<xsd:restriction base="xsd:string">
+															<xsd:minLength value="1"/>
+															<xsd:maxLength value="20"/>
+														</xsd:restriction>
+													</xsd:simpleType>
+												</xsd:attribute>
+												<xsd:attribute name="OrderYear" use="required">
+													<xsd:simpleType>
+														<xsd:restriction base="xsd:string">
+															<xsd:length value="4"/>
+														</xsd:restriction>
+													</xsd:simpleType>
+												</xsd:attribute>
+												<xsd:attribute name="LoadListNo" use="required">
+													<xsd:simpleType>
+														<xsd:restriction base="xsd:string">
+															<xsd:minLength value="1"/>
+															<xsd:maxLength value="20"/>
+														</xsd:restriction>
+													</xsd:simpleType>
+												</xsd:attribute>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="OrderItem" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Product">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="ProductCode">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="1"/>
+																			<xsd:maxLength value="20"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="ProductName" type="xsd:string"/>
+																<xsd:element name="ProductDescr" type="xsd:string" minOccurs="0"/>
+																<xsd:element name="Barcode" type="xsd:string" minOccurs="0"/>
+																<xsd:element name="QttOnPalett" type="xsd:int" minOccurs="0"/>
+																<xsd:element name="QttInPack" type="xsd:int" minOccurs="0"/>
+																<xsd:element name="PackBarcode" type="xsd:string" minOccurs="0"/>
+																<xsd:element name="PalletBarcode" type="xsd:string" minOccurs="0"/>
+																<xsd:element name="UnitWeight" type="xsd:decimal" minOccurs="0"/>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+													<xsd:element name="Quantity">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:decimal">
+																<xsd:totalDigits value="15"/>
+																<xsd:fractionDigits value="2"/>
+																<xsd:minInclusive value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="RealQuantity" minOccurs="0">
+														<xsd:annotation>
+															<xsd:appinfo>Provera stvarne količine robe.</xsd:appinfo>
+															<xsd:documentation xml:lang="sr-latn">Stvarna količina robe.</xsd:documentation>
+														</xsd:annotation>
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:decimal">
+																<xsd:totalDigits value="15"/>
+																<xsd:fractionDigits value="2"/>
+																<xsd:minInclusive value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="MsrUnit">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:enumeration value="KD"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="DamagedQuantity" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:decimal">
+																<xsd:totalDigits value="15"/>
+																<xsd:fractionDigits value="2"/>
+																<xsd:minInclusive value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="DamageDescr" type="xsd:string" minOccurs="0"/>
+													<xsd:element name="PalettCount" minOccurs="0" type="xsd:int" />
+													<xsd:element name="PackCount" minOccurs="0" type="xsd:int" />
+													<xsd:element name="ItemWeight" minOccurs="0">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:decimal">
+																<xsd:totalDigits value="15"/>
+																<xsd:fractionDigits value="2"/>
+																<xsd:minInclusive value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="ItemNo" use="required">
+													<xsd:simpleType>
+														<xsd:restriction base="xsd:int">
+															<xsd:minInclusive value="1"/>
+														</xsd:restriction>
+													</xsd:simpleType>
+												</xsd:attribute>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="HeaderType">
+		<xsd:sequence>
+			<xsd:element name="SenderID">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="9"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="SenderName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RecipientID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WarehouseID">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

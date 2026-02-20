@@ -1,0 +1,145 @@
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:KlettControllerwsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:KlettControllerwsdl">
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="urn:KlettControllerwsdl">
+            <s:element name="TestService">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="TestServiceResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="TestServiceResult"
+                                   type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendOrder">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="docMessage" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="partnerID" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendOrderResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="SendOrderResult" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetOrderResult">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="loadlistNo" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="orderYear" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="partnerID" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="warehouseID" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetOrderResultResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetOrderResultResult"
+                                   type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendInventoryRequest">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="partnerID" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendInventoryRequestResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="SendInventoryRequestResult"
+                                   type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetInventoryResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="partnerID" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="warehouseID" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetInventoryResponseResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetInventoryResponseResult"
+                                   type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="TestServiceIn">
+        <wsdl:part name="message" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="TestServiceOut">
+        <wsdl:part name="return" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="SendOrderIn">
+        <wsdl:part name="docMessage" type="xsd:string"/>
+        <wsdl:part name="partnerID" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="SendOrderOut">
+        <wsdl:part name="return" type="xsd:struct"/>
+    </wsdl:message>
+    <wsdl:portType name="KlettControllerPortType">
+        <wsdl:operation name="TestService">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:TestServiceIn"/>
+            <wsdl:output message="tns:TestServiceOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SendOrder">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:SendOrderIn"/>
+            <wsdl:output message="tns:SendOrderOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="KlettControllerBinding" type="tns:KlettControllerPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="TestService">
+            <soap:operation soapAction="urn:KlettControllerwsdl#TestService" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="urn:KlettControllerwsdl"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="urn:KlettControllerwsdl"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendOrder">
+            <soap:operation soapAction="urn:KlettControllerwsdl#SendOrder" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="urn:KlettControllerwsdl"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                           namespace="urn:KlettControllerwsdl"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="KlettControllerService">
+        <wsdl:port name="KlettControllerPort" binding="tns:KlettControllerBinding">
+            <soap:address location="http://wtc3.localhost/ws/klett/wtc-ws/ws/1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

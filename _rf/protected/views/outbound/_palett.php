@@ -1,0 +1,42 @@
+<?php
+
+$picked = Pick::model()->find(array('condition' => 'id = ' . $data->id . ' AND sscc_destination IS NOT NULL'));
+if ($picked !== null) {
+    $alert = 'alert-warning';
+} else {
+    $alert = '';
+}
+
+?>
+
+
+<div class="bubble <?= $alert; ?>">
+
+    <div class="row">
+        <div class="col-xs-9">
+            <h4>SLOC: <?= $data['sloc_code']; ?></h4>
+            <p><?= Product::model()->findByPk($data['product_id'])->title; ?></p>
+            <b><?= $data->sscc_source; ?></b><?=$picked !== null && $picked->pick_type == 'product' ? '&nbsp;<span class="text-success"><b>' . $picked->sscc_destination . '</b></span>' : '';?><br>
+        </div>
+        <div class="col-xs-3 text-right" style="vertical-align: middle;height: 100%">
+
+
+            <?php if ($alert == 'alert-warning'):?>
+                <?= CHtml::link('<i class="glyphicon glyphicon-remove"></i>',Yii::app()->createUrl('/pick/reset',array('id'=>$picked->id)),array("class"=>"btn btn-danger btn-xs",'onclick' => 'if(!confirm("Da li ste sigurni da želite da poništite pikovanje?")) return false;'));?>
+            <!--    <?= CHtml::link('<i class="glyphicon glyphicon-th-list"></i>',Yii::app()->createUrl('/pick/load',array('id'=>$picked->id)),array("class"=>"btn btn-success btn-xs"));?> -->
+            <?php else : ?>
+
+                <?= CHtml::link('<i class="glyphicon glyphicon-th-large"></i>',Yii::app()->createUrl('/pick/update/'.$data->id,),array("class"=>"btn btn-warning btn-xs"));?>
+
+            <?php endif; ?>
+
+        </div>
+
+        <h4 class="col-xs-12 text-right">Komada: <b><?= $data->target; ?></b>
+<?php if ($data->quantity > 0): ?>
+            <br>Pikovano: <b><?= $data->quantity; ?></b>
+<?php endif; ?>
+        </h4>
+
+    </div>
+</div>

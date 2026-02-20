@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'DB Office';
+    src: url('DBOffice-Regular.woff2') format('woff2'),
+        url('DBOffice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

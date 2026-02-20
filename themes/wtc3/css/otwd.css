@@ -1,0 +1,225 @@
+/*
+Bootstrap overwrite stylesheet
+*/
+/* 
+    Created on : Jun 16, 2020, 2:06:28 PM
+    Author     : gotivac
+*/
+
+.dropdown-menu {
+    text-align: left !important;
+}
+
+.nav-pills > li{
+    position: relative;
+    display:block;
+    padding:2px 3px;
+    text-align: center;
+
+
+}
+
+.nav-pills > li > a {
+    background-color:#20727c;
+
+    color:#fff;
+}
+
+#middle {
+    padding:10px;
+    font-size:0.9em;
+}
+
+/* Start Portlets*/
+.portlet{
+    -webkit-box-shadow:#F9F9F9 0 1px 0 inset;
+    border:1px solid #DDDDDD;
+    border-radius:3px;
+    box-shadow:#F9F9F9 0 1px 0 inset;
+    margin-bottom:20px;
+    min-height:40px;
+
+}
+
+.portlet-decoration{
+    border-bottom:1px solid #DDD;
+    background-color: #F1F1F1;
+    background-image: -moz-linear-gradient(top, #F1F1F1, #DBDBDB);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F1F1F1), to(#DBDBDB));
+    background-image: -webkit-linear-gradient(top, #F1F1F1, #DBDBDB);
+    background-image: -o-linear-gradient(top, #F1F1F1, #DBDBDB);
+    background-image: linear-gradient(to bottom, #F1F1F1, #DBDBDB);
+    background-repeat: repeat-x;
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffF1F1F1', endColorstr='#ffDBDBDB', GradientType=0);
+    padding:10px;
+}
+
+.portlet-decoration [class^="icon-"], .portlet-decoration [class*=" icon-"] {
+
+    margin-right:5px;
+
+}
+.portlet-content{
+    padding: 15px;
+    background: solid;
+    background-color: #f5f5f5;
+}
+
+.form-actions {
+    margin: 34px 0 10px 0;
+    text-align: center;
+    border-top: solid thin black;
+    padding-top:10px;
+
+}
+
+.alert-placeholder {
+    min-height: 60px;
+}
+
+.dz-details {
+    
+    width:160px !important;
+    height:160px !important;
+}
+.dz-details img {
+    
+    width:160px !important;
+    height:160px !important;
+    z-index:1;
+   
+}
+.dz-progress {
+    top: 133px !important;
+}
+.dz-filename {
+    background:rgba(0,0,0,0.8);
+    z-index: 100;
+}
+.dz-filename span {
+    color: #fff;
+}
+.dz-error-message {
+    background: transparent !important;
+}
+
+.dz-size {
+    display:none;
+}
+
+.panel-body {
+    border: thin solid #dddddd;
+}
+
+.datepicker {
+    z-index: 1600 !important; /* has to be larger than 1050 */
+}
+
+hr {
+    border-bottom: 1px solid #666 !important;
+}
+
+.form-group p {
+    margin-bottom: 0px;
+}    
+/*
+.modal-dialog {
+    width:1200px;
+}
+*/
+.logo-canvas img {
+    /* width: 100%; */
+    max-height: 100%;
+}
+
+
+.ui-autocomplete {
+	font-size: 14px;
+	padding: 8px;
+	font-family: 'Lato', sans-serif;
+	max-height: 200px;
+	overflow: auto;
+}
+
+input.form-control, select.form-control {
+   /* height: 34px !important; */
+}
+
+.text-info {
+    margin-bottom: 20px;
+}
+
+.btn > i {
+    padding-right: 0px !important;
+}
+.btn.update {
+    border: solid thin #428bca;
+}
+
+.btn.delete {
+    border: solid thin #428bca;
+}
+.btn.view {
+    border: solid thin #428bca;
+}
+
+table .btn {
+    margin: 0 !important;
+}
+.tab-content {
+    padding-top: 12px;
+}
+
+section .nav-pills > li > a:hover, section .nav-pills > li > a:focus, section .nav-pills > li.active > a, section .nav-pills > li.active > a:hover, section .nav-pills > li.active > a:focus {
+    background-color: #a6d9dc !important;
+}
+.ct-form-control {
+    min-width:100px !important;
+}
+
+.shadow-box
+{
+    padding: 20px 30px 40px;
+
+    box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12)
+
+}
+
+#sideNav {
+     font-weight: 800;
+}
+
+.id-column {
+    min-width:100px !important;
+}
+.activity-green {
+    background-color: #afa;
+}
+.activity-yellow {
+    background-color: #ffa;
+}
+
+.activity-red {
+    background-color: #faa;
+}
+
+summary {
+    width:100%;
+    font-size: 16px;
+    font-weight: bold;
+    background: #eee;
+    padding:6px;
+    border-radius: 4px;
+    cursor:pointer;
+
+}
+summary :hover {
+    color:#fff;
+}
+

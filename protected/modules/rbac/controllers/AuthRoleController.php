@@ -1,0 +1,199 @@
+<?php
+
+class AuthRoleController extends Controller
+{
+    /**
+     * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+     * using two-column layout. See 'protected/views/layouts/column2.php'.
+     */
+    public $layout = '//layouts/column1';
+
+    /**
+     * @return array action filters
+     */
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    /**
+     * Specifies the access control rules.
+     * This method is used by the 'accessControl' filter.
+     * @return array access control rules
+     */
+    public function accessRules()
+    {
+        return array(
+            array('allow', // allow all users to perform 'index' and 'view' actions
+                'actions' => array('index', 'create', 'update', 'delete'),
+                'roles' => array('administrator'),
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
+
+    /**
+     * Displays a particular model.
+     * @param integer $id the ID of the model to be displayed
+     */
+    public function actionView($id)
+    {
+        $this->render('view', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
+
+    /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer the ID of the model to be loaded
+     */
+    public function loadModel($id)
+    {
+        $model = AuthRole::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+
+    /**
+     * Creates a new model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     */
+    public function actionCreate()
+    {
+        $model = new AuthRole;
+
+// Uncomment the following line if AJAX validation is needed
+// $this->performAjaxValidation($model);
+
+        if (isset($_POST['AuthRole'])) {
+            $model->attributes = $_POST['AuthRole'];
+            if ($model->save()) {
+                Yii::app()->user->setFlash('success', Yii::t('app', 'Created'));
+                $this->redirect(array('update', 'id' => $model->id));
+            }
+        }
+
+        $this->render('create', array(
+            'model' => $model,
+        ));
+    }
+
+    /**
+     * Updates a particular model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id the ID of the model to be updated
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->loadModel($id);
+
+        if (isset($_POST['AuthRole'])) {
+            $model->attributes = $_POST['AuthRole'];
+            if ($model->save()) {
+                Yii::app()->user->setFlash('success', Yii::t('app', 'Saved'));
+            }
+        }
+       if (isset($_POST['AuthRoleActivityType'])) {
+           AuthRoleActivityType::cant($id);
+           $errors = false;
+           foreach ($_POST['AuthRoleActivityType'] as $activity_type_id => $value) {
+               $auth_role_activity_type = new AuthRoleActivityType;
+               $auth_role_activity_type->attributes = array(
+                   'auth_role_id' => $id,
+                   'activity_type_id' => $activity_type_id,
+               );
+
+               if (!$auth_role_activity_type->save()) {
+                   Yii::app()->user->setFlash('error',CHtml::errorSummary($auth_role_activity_type));
+                   $errors = true;
+
+               }
+               if (!$errors) {
+                   Yii::app()->user->setFlash('success','Saved');
+               }
+
+           }
+       }
+        if (isset($_POST['AuthRoleCan'])) {
+            AuthRoleCan::cant($id);
+            $errors = false;
+            foreach ($_POST['AuthRoleCan'] as $controller => $actions) {
+                foreach ($actions as $action => $void) {
+                    $auth_role_can = new AuthRoleCan();
+                    $auth_role_can->attributes = array(
+                        'auth_role_id' => $id,
+                        'auth_controller_id' => AuthController::model()->findByAttributes(array('title' => $controller))->id,
+                        'url_phrase' => "$controller/$action",
+                    );
+                    $auth_role_can->auth_action_id = AuthAction::model()->findByAttributes(array('title' => $action))->id;
+                    if (!$auth_role_can->save()) {
+                        Yii::app()->user->setFlash('error',CHtml::errorSummary($auth_role_can));
+                        $errors = true;
+
+                    }
+                }
+            }
+            if (!$errors) {
+                Yii::app()->user->setFlash('success','Saved');
+            }
+        }
+
+
+        $this->render('update', array(
+            'model' => $model,
+        ));
+    }
+
+    /**
+     * Deletes a particular model.
+     * If deletion is successful, the browser will be redirected to the 'admin' page.
+     * @param integer $id the ID of the model to be deleted
+     */
+    public function actionDelete($id)
+    {
+        if (Yii::app()->request->isPostRequest) {
+// we only allow deletion via POST request
+            $this->loadModel($id)->delete();
+
+// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if (!isset($_GET['ajax']))
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        } else
+            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+    }
+
+    /**
+     * Lists all models.
+     */
+    public function actionIndex()
+    {
+        $model = new AuthRole('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['AuthRole']))
+            $model->attributes = $_GET['AuthRole'];
+
+        $this->render('index', array(
+            'model' => $model,
+        ));
+    }
+
+    /**
+     * Performs the AJAX validation.
+     * @param CModel the model to be validated
+     */
+    protected function performAjaxValidation($model)
+    {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'auth-role-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
+
+
+}
