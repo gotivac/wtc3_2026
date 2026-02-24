@@ -18,6 +18,7 @@
  * @property string $length
  * @property string $height
  * @property string $weight
+ * @property string $volume
  * @property integer $pieces_in_package
  * @property integer $packages_on_pallet
  * @property integer $stock_minimum
@@ -58,11 +59,11 @@ class Product extends CActiveRecord
             array('client_id, title, internal_product_number, product_barcode', 'required'),
             array('client_id, product_type_id, load_carrier_id, package_id, pieces_in_package, packages_on_pallet, stock_minimum, stock_maximum, created_user_id, updated_user_id', 'numerical', 'integerOnly' => true),
             array('external_product_number, internal_product_number, product_barcode, title', 'length', 'max' => 255),
-            array('width, length, height, weight', 'length', 'max' => 10),
+            array('width, length, height, weight, volume', 'length', 'max' => 10),
             array('description, created_dt, updated_dt', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, client_id, product_type_id, load_carrier_id, package_id, external_product_number, internal_product_number, product_barcode, title, description, width, length, height, weight, pieces_in_package, packages_on_pallet, stock_minimum, stock_maximum, created_user_id, created_dt, updated_user_id, updated_dt', 'safe', 'on' => 'search'),
+            array('id, client_id, product_type_id, load_carrier_id, package_id, external_product_number, internal_product_number, product_barcode, title, description, width, length, height, weight, volume, pieces_in_package, packages_on_pallet, stock_minimum, stock_maximum, created_user_id, created_dt, updated_user_id, updated_dt', 'safe', 'on' => 'search'),
         );
     }
 
@@ -106,6 +107,7 @@ class Product extends CActiveRecord
             'length' => Yii::t('app', 'Length'),
             'height' => Yii::t('app', 'Height'),
             'weight' => Yii::t('app', 'Weight'),
+            'volume' => Yii::t('app', 'Volume'),
             'pieces_in_package' => Yii::t('app', 'Pieces In Package'),
             'packages_on_pallet' => Yii::t('app', 'Packages On Pallet'),
             'stock_minimum' => Yii::t('app', 'Stock Minimum'),
@@ -179,6 +181,7 @@ class Product extends CActiveRecord
         $this->height = $this->height != '' ? str_replace(',', '.', $this->height) : null;
         $this->length = $this->length != '' ? str_replace(',', '.', $this->length) : null;
         $this->weight = $this->weight != '' ? str_replace(',', '.', $this->weight) : null;
+        $this->volume = $this->volume != '' ? str_replace(',', '.', $this->volume) : null;
         $this->internal_product_number = trim($this->internal_product_number);
         $this->external_product_number = trim($this->external_product_number);
         $this->product_barcode = trim($this->product_barcode);

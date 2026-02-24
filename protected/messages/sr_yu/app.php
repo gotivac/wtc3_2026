@@ -583,6 +583,7 @@ return array(
     'Product History' => 'Kretanje proizvoda',
     'Volume' => 'Zapremina',
     'Delivery Number' => 'DN broj',
+    'Payer Data' => 'Podaci o platiocu',
 
 
     /* Months */

@@ -23,6 +23,7 @@
  * @property string $license_plate
  * @property string $shipper_data
  * @property string $driver_data
+ * @property string $payer_data
  * @property integer $driver_present
  * @property integer $system_acceptance
  * @property string $system_acceptance_datetime
@@ -78,10 +79,10 @@ class Activity extends CActiveRecord
             array('order_request_id, location_id, gate_id, activity_type_id', 'required'),
             array('order_request_id, activity_type_id, location_id, gate_id, truck_checked, driver_present, system_acceptance, customs_user_id, urgent, created_user_id, updated_user_id', 'numerical', 'integerOnly' => true),
             array('direction, license_plate, customs', 'length', 'max' => 255),
-            array('truck_arrived_date, truck_arrived_time, truck_arrived_datetime, truck_checked_date, truck_checked_time, shipper_data, driver_data, truck_checked_datetime, truck_dispatch_date, truck_dispatch_time, truck_dispatch_datetime, system_acceptance_datetime, customs_datetime, notes, created_dt, updated_dt', 'safe'),
+            array('truck_arrived_date, truck_arrived_time, truck_arrived_datetime, truck_checked_date, truck_checked_time, shipper_data, driver_data, payer_data, truck_checked_datetime, truck_dispatch_date, truck_dispatch_time, truck_dispatch_datetime, system_acceptance_datetime, customs_datetime, notes, created_dt, updated_dt', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, order_request_id, activity_type_id, direction, location_id, gate_id, shipper_data, driver_data, truck_arrived_date, truck_arrived_time, truck_arrived_datetime, truck_checked, truck_checked_date, truck_checked_time, truck_checked_datetime, truck_dispatch_date, truck_dispatch_time, truck_dispatch_datetime, license_plate, driver_present, system_acceptance, system_acceptance_datetime, customs, customs_datetime, customs_user_id, notes, urgent, created_user_id, created_dt, updated_user_id, updated_dt, order_number_search, order_id_search', 'safe', 'on' => 'search'),
+            array('id, order_request_id, activity_type_id, direction, location_id, gate_id, shipper_data, driver_data, payer_data, truck_arrived_date, truck_arrived_time, truck_arrived_datetime, truck_checked, truck_checked_date, truck_checked_time, truck_checked_datetime, truck_dispatch_date, truck_dispatch_time, truck_dispatch_datetime, license_plate, driver_present, system_acceptance, system_acceptance_datetime, customs, customs_datetime, customs_user_id, notes, urgent, created_user_id, created_dt, updated_user_id, updated_dt, order_number_search, order_id_search', 'safe', 'on' => 'search'),
         );
     }
 
@@ -130,6 +131,7 @@ class Activity extends CActiveRecord
             'license_plate' => Yii::t('app', 'License Plate'),
             'shipper_data' => Yii::t('app', 'Shipper Data'),
             'driver_data' => Yii::t('app', 'Driver Data'),
+            'payer_data' => Yii::t('app', 'Payer Data'),
             'driver_present' => Yii::t('app', 'Driver Present'),
             'system_acceptance' => Yii::t('app', 'System Acceptance'),
             'system_acceptance_datetime' => Yii::t('app', 'System Acceptance / Delivery Datetime'),

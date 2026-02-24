@@ -10,7 +10,7 @@
 
 	<?php echo $form->hiddenField($model,'order_client_id'); ?>
 
-    <?php echo $form->dropDownListGroup($model, 'product_id', array('wrapperHtmlOptions' => array('class' => ' col-md-6 col-sm-12'), 'widgetOptions' => array('data' => CHtml::listData($products, 'id', 'title'), 'htmlOptions' => array('empty' => '','onchange' => '$("#OrderProduct_quantity").val("");','class'=>'selectpicker')))); ?>
+    <?php echo $form->dropDownListGroup($model, 'product_id', array('wrapperHtmlOptions' => array('class' => ' col-md-6 col-sm-12'), 'widgetOptions' => array('data' => CHtml::listData($products, 'id', 'internal_product_number'), 'htmlOptions' => array('empty' => '','onchange' => '$("#OrderProduct_quantity").val("");','class'=>'selectpicker')))); ?>
 
 	<?php echo $form->textFieldGroup($model,'quantity',array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'),'widgetOptions'=>array('htmlOptions'=>array('class'=>'calc')))); ?>
 

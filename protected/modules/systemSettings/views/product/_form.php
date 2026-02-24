@@ -40,13 +40,14 @@
 
 <?php echo $form->textAreaGroup($model, 'description', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('rows' => 6)))); ?>
 
-<?php echo $form->textFieldGroup($model, 'width', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'mm')); ?>
+<?php echo $form->textFieldGroup($model, 'width', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'm')); ?>
 
-<?php echo $form->textFieldGroup($model, 'length', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'mm')); ?>
+<?php echo $form->textFieldGroup($model, 'length', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'm')); ?>
 
-<?php echo $form->textFieldGroup($model, 'height', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'mm')); ?>
+<?php echo $form->textFieldGroup($model, 'height', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'm')); ?>
 
 <?php echo $form->textFieldGroup($model, 'weight', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'kg')); ?>
+<?php echo $form->textFieldGroup($model, 'volume', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('maxlength' => 10)), 'append' => 'm3')); ?>
 
 <?php // echo $form->textFieldGroup($model, 'pieces_in_package', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array()))); ?>
 

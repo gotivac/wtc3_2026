@@ -208,6 +208,14 @@ $this->menu = array(
                             'headerHtmlOptions' => array('class' => 'text-right'),
                         ),
                         array(
+
+                            'name' => 'volume',
+                            'type' => 'raw',
+                            'value' => '$data->volume . " m<sup>3</sup>"',
+                            'htmlOptions' => array('class' => 'text-right'),
+                            'headerHtmlOptions' => array('class' => 'text-right'),
+                        ),
+                        array(
                             'name' => 'packages',
                             'htmlOptions' => array('class' => 'text-right'),
                             'headerHtmlOptions' => array('class' => 'text-right'),

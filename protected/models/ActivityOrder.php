@@ -622,7 +622,8 @@ class ActivityOrder extends CActiveRecord
         $pdf->MultiCell(6, 0.6, 'STANDARD', 'TR', 'L', 0, 0, $x + 3, $y, true, 0, false, true, 0.6, 'M', true);
         $y += 0.6;
         $pdf->MultiCell(3, 0.6, "Ref dokument:", 'LRTB', 'R', 0, 0, $x, $y, true, 0, false, true, 0.6, 'M', true);
-        $pdf->MultiCell(6, 0.6, isset($order_klett) && $order_klett !== null ? $order_klett->OrderYear . $this->order_number . ' / ' . date('d.m.Y', strtotime($order_klett->OrderDate)) : "", 'TRB', 'L', 0, 0, $x + 3, $y, true, 0, false, true, 0.6, 'M', true);
+        // $pdf->MultiCell(6, 0.6, isset($order_klett) && $order_klett !== null ? $order_klett->OrderYear . $this->order_number . ' / ' . date('d.m.Y', strtotime($order_klett->OrderDate)) : "", 'TRB', 'L', 0, 0, $x + 3, $y, true, 0, false, true, 0.6, 'M', true);
+        $pdf->MultiCell(6, 0.6, $this->order_number, 'TRB', 'L', 0, 0, $x + 3, $y, true, 0, false, true, 0.6, 'M', true);
         $y += 0.6;
         $pdf->MultiCell(3, 0.6, "Vrsta dostave:", 'LRTB', 'R', 0, 0, $x, $y, true, 0, false, true, 0.6, 'M', true);
         $pdf->MultiCell(6, 0.6, isset($order_klett) && $order_klett !== null ? $order_klett->deliveryType : "", 'TRB', 'L', 0, 0, $x + 3, $y, true, 0, false, true, 0.6, 'M', true);
@@ -665,12 +666,12 @@ class ActivityOrder extends CActiveRecord
         $pdf->MultiCell(7, 0.4, isset($ship_to_party) ? 'Kontakt: ' . $ship_to_party['contact'] : '', 'BR', 'L', 0, 0, $x + 3, $y, true);
         $y += 0.4;
 
-        $pdf->MultiCell(3, 0.8, "Prevoznik:", 'LRTB', 'R', 0, 0, $x, $y, true, 0, false, true, 0.8, 'T', true);
+        $pdf->MultiCell(3, 0.8, "Platilac:", 'LRTB', 'R', 0, 0, $x, $y, true, 0, false, true, 0.8, 'T', true);
 
         if (isset($order_klett) && in_array($order_klett->DeliveryType, array('9', '11', '14', '17'))) {
             $shipper_data = 'YU PD Express d.o.o., Zage Malivuk 1, 11060 Beograd, PIB 101754136, MB 08192189';
         } else {
-            $shipper_data = $this->activity->shipper_data;
+            $shipper_data = $this->activity->payer_data;
         }
 
         $pdf->MultiCell(7, 0.8, $shipper_data, 'TR', 'L', 0, 0, $x + 3, $y, true);

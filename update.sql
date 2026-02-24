@@ -1,1 +1,2 @@
-ALTER TABLE `activity_palett_has_product` ADD `delivery_number` VARCHAR(255) NULL DEFAULT NULL AFTER `product_barcode`, ADD `volume` DECIMAL(10,2) NULL DEFAULT NULL AFTER `delivery_number`; 
+ALTER TABLE `activity` ADD `payer_data` TEXT NULL DEFAULT NULL AFTER `driver_data`;
+ALTER TABLE `product` ADD `volume` DECIMAL(10,4) NULL DEFAULT NULL AFTER `weight`;

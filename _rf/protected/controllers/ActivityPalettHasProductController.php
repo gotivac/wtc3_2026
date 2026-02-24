@@ -68,7 +68,8 @@ class ActivityPalettHasProductController extends Controller
             $model->attributes = $_POST['ActivityPalettHasProduct'];
             $product = Product::model()->findByAttributes(array('product_barcode' => $model->product_barcode));
             $model->product_id = $product->id;
-            $model->volume = $product->length * $product->width * $product->height * $model->quantity;
+
+            $model->volume = $product->volume * $model->quantity;
 
             if (isset($_POST['ExpireDate'])) {
                 $model->expire_date = $_POST['ExpireDate']['day'] . '.' . $_POST['ExpireDate']['month'] . '.' . $_POST['ExpireDate']['year'];
@@ -131,6 +132,7 @@ class ActivityPalettHasProductController extends Controller
         if (isset($_POST['ActivityPalettHasProduct'])) {
             $model->attributes = $_POST['ActivityPalettHasProduct'];
 
+
             $model->product_id = Product::model()->findByAttributes(array('product_barcode' => $model->product_barcode))->id;
             $activity = Activity::model()->findByPk($activity_palett_has_product->activityPalett->activity->id);
             if ($activity === null) {
@@ -147,6 +149,7 @@ class ActivityPalettHasProductController extends Controller
                 $model->packages = $model->packages + $packages;
                 $model->units = $model->units + $units;
             }
+            $model->volume = $model->product->volume * $model->quantity;
             if ($model->save()) {
                 echo json_encode($model->attributes);
             } else {

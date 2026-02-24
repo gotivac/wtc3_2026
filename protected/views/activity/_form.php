@@ -43,7 +43,7 @@ echo $form->switchGroup($model, 'urgent', array(
 
 <?php echo $form->textAreaGroup($model, 'shipper_data', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('rows' => 2)))); ?>
 
-<?php echo $form->textAreaGroup($model, 'driver_data', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('rows' => 2)))); ?>
+<?php echo $form->textAreaGroup($model, 'payer_data', array('wrapperHtmlOptions' => array('class' => 'col-md-6 col-sm-12'), 'widgetOptions' => array('htmlOptions' => array('rows' => 2)))); ?>
 <?php if (!$model->isNewRecord): ?>
 
 
